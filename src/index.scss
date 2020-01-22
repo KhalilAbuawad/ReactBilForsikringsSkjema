@@ -1,0 +1,10 @@
+
+@font-face {
+    font-family: 'GroteskRW';
+    src: url(./fonts/GroteskRW.woff2) format('woff2'),
+        url(./fonts/GroteskRW.woff) format('woff');
+}
+
+h1, h2, h4, p, div {
+    font-family: GroteskRW;
+}
