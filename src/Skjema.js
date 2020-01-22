@@ -104,23 +104,23 @@ export default function Skjema() {
   {
     regnr: {
       errormessage:'',
-      errorState: false,
+      errorState: true,
     },
     name:{
       errormessage:'',
-      errorState: false,
+      errorState: true,
     },
     surname:{
       errormessage:'',
-      errorState: false,
+      errorState: true,
     },
     birthnr: {
       errormessage:'',
-      errorState: false,
+      errorState: true,
     },
     email: {
       errormessage:'',
-      errorState: false,
+      errorState: true,
     }
   });
 
@@ -264,19 +264,20 @@ export default function Skjema() {
   }
 
   const validateForm = () => {
-    Object.keys(errors).map(key => {
-      
-      if(key.errorState){
-        return true
-      } 
+    let invalid = false
+    console.log(errors)
+    Object.values(errors).map((textfield) => {
+      console.log(textfield.errorState)
+      if(textfield.errorState === true){
+        invalid = true
+      }
     })
-    return false
+    return invalid
   }
 
   const submitForm = () => {
-    
-    if(validateForm()){
-      setOpen(true);
+    if(validateForm()=== false){
+      setOpen(true)
     }
   }
 
