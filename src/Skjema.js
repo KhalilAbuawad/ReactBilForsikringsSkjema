@@ -264,15 +264,17 @@ export default function Skjema() {
   }
 
   const validateForm = () => {
-    
     Object.keys(errors).map(key => {
-      if(key.errormessage){
-        setOpen(true);
-      }
+      
+      if(key.errorState){
+        return true
+      } 
     })
+    return false
   }
 
   const submitForm = () => {
+    
     if(validateForm()){
       setOpen(true);
     }
